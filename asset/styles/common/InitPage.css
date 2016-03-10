@@ -1,0 +1,15 @@
+.modal_panel {
+    height: 40vh;
+    width: 40vh;
+    margin-top: 20vh;
+    background-color: rgba(200,200,200,0.6);
+    border-radius: 30px;
+}
+
+.warning_label {
+    margin-top: 10vh;
+    height: 20vh;
+    width: 30vh;
+    font-size: 2em;
+    color: #ddffdd;
+}

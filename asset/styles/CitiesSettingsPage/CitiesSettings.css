@@ -1,0 +1,39 @@
+.CitiesSettings {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    /*background-image: url(/asset/images/bg@3x.png);*/
+    /*background-size: cover;*/
+    color: rgb(255, 255, 255);
+    background: -webkit-radial-gradient(rgb(255,255,255) 15%, rgba(0,0,0,0) 16%), -webkit-radial-gradient(rgb(255,255,255) 15%, rgba(0,0,0,0) 16%), rgb(147, 148, 148);
+    background: -moz-radial-gradient(rgb(255,255,255) 15%, rgba(0,0,0,0) 16%), -moz-radial-gradient(rgb(255,255,255) 15%, rgba(0,0,0,0) 16%), rgb(147, 148, 148);
+    background: radial-gradient(rgb(255,255,255) 15%, rgba(0,0,0,0) 16%), radial-gradient(rgb(255,255,255) 15%, rgba(0,0,0,0) 16%), rgb(147, 148, 148);
+    background-position: 0 0, 30px 30px;
+    background-size: 60px 60px;
+}
+
+.navigator_add{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(50,50,50,0.8);
+    height: 50px;
+}
+
+.add_button, .add_button:hover{
+    border: none;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(50,50,50,0.9);
+}
+
+.selected_cities_list {
+    width: 100%;
+    margin-top:50px;
+}
+
+
