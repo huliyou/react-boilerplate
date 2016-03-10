@@ -9,12 +9,15 @@
 import React from 'react';
 
 class App extends React.Component {
+  componentWillMount() {
+    console.log('hello world');
+  }
 
   render() {
     return (
-      <div></div>
+      <div>Hello world</div>
     );
   }
-};
+}
 
 export default App;

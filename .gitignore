@@ -1,0 +1,5 @@
+.idea
+bundle.js
+node_modules
+*.min.js
+*.min.css

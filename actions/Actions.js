@@ -1,14 +1,10 @@
 // Actions define
-// 代码示例: export const GET_CITIES_LIST_REQUEST = 'GET_CITIES_LIST_REQUEST';
-
-
-
+export const HELLO_WORLD = 'HELLO_WORLD';
 
 // Actions creactor
-// 代码示例:
-//export function getCitiesListRequest() {
-//  return {
-//    type: GET_CITIES_LIST_REQUEST,
-//  };
-//};
+export function getCitiesListRequest() {
+  return {
+    type: HELLO_WORLD,
+  };
+}
 
