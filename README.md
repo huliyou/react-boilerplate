@@ -30,3 +30,7 @@ This is a starter boilerplate app I've put together using the following technolo
 
 # Testing
     npm run test
+
+# Info
+    node version: v5.0.0
+    npm version: 3.8.1
