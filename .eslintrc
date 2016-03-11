@@ -2,12 +2,30 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "plugins": [
-    "flow-vars"
+    "flow-vars",
+    "react"
   ],
+
+  "env": {
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
 
   "rules": {
     "flow-vars/define-flow-type": 1,
     "flow-vars/use-flow-type": 1,
-    "arrow-body-style": 0
+    "arrow-body-style": 0,
+    "jsx-no-bind": [1, {
+    "ignoreRefs": true,
+    "allowArrowFunctions": true,
+    "allowBind": true
+    }],
+    "new-cap": [1, {
+      "capIsNewExceptions": ["Immutable"]
+    }]
   }
+
+
 }

@@ -10,7 +10,9 @@ import { syncHistory } from 'react-router-redux';
 import createHistory from 'history/lib/createBrowserHistory';
 const browserHistory = createHistory();
 
-import Apps from './components/App';
+import App from './components/App';
+import PageA from './components/PageA';
+import PageB from './components/PageB';
 
 const rootElement = document.getElementById('app');
 
@@ -36,9 +38,12 @@ console.log('store', store.getState());
 
 render(
   <Provider store={store}>
-        <Router history={browserHistory}>
-            <Route path="/" component={Apps} />
-        </Router>
-    </Provider>,
+    <Router history={browserHistory}>
+        <Route path="/" component={App}>
+          <Route path="pageA" component={PageA} />
+          <Route path="pageB" component={PageB} />
+        </Route>
+     </Router>
+  </Provider>,
   rootElement
 );

@@ -1,23 +1,58 @@
-/**
- *  组件:
- *  描述:
- *  props:
- *  scene:
- *  创建时间: 2016-1-11
- */
+import React, { PropTypes } from 'react';
+import { routeActions } from 'react-router-redux';
+import { connect } from 'react-redux';
 
-import React from 'react';
+const propTypes = {
+  children: PropTypes.any,
+  dispatch: PropTypes.func,
+};
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this._routeToPageA = this._routeToPageA.bind(this);
+    this._routeToPageB = this._routeToPageB.bind(this);
+  }
   componentWillMount() {
-    console.log('hello world');
+    return true;
+  }
+  _routeToPageA() {
+    this.props.dispatch(routeActions.push('/PageA'));
+  }
+
+  _routeToPageB() {
+    this.props.dispatch(routeActions.push('/PageB'));
   }
 
   render() {
     return (
-      <div>Hello world</div>
+      <div>
+      <div>
+          <button
+            onClick={this._routeToPageA}
+          >
+            PageA
+          </button>
+          <button
+            onClick={this._routeToPageB}
+          >
+            PageB
+          </button>
+        </div>
+        <div>
+          <div>{this.props.children}</div>
+        </div>
+      </div>
     );
   }
 }
 
-export default App;
+App.propTypes = propTypes;
+
+function mapStateToProps(state) {
+  return {
+    dispatch: state.dispatch,
+  };
+}
+
+export default connect(mapStateToProps)(App);
