@@ -2,19 +2,19 @@
 This is a starter boilerplate app I've put together using the following technologies:
 
 * Browser side rendering
-* React
-* React Router
-* Babel
-* Webpack
-* Webpack-dev-server
-* Webpack Hot Middleware
-* Redux
+* [React](https://github.com/facebook/react)
+* [React Router](https://github.com/reactjs/react-router)
+* [Babel](https://github.com/babel/babel)
+* [Webpack](https://github.com/webpack/webpack)
+* [Webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+* [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware)
+* [Redux](https://github.com/reactjs/redux)
 * Redux Dev Tools
-* React Router Redux
+* [React Router Redux](https://github.com/reactjs/react-router-redux)
 * ESLint
-* Airbnb style guide
+* [Airbnb style guide](https://github.com/airbnb/javascript)
 * style-loader, sass-loader, css-loader
-* mocha 
+* [mocha](https://github.com/mochajs/mocha) 
 
 # Installation
     npm install
@@ -23,7 +23,7 @@ This is a starter boilerplate app I've put together using the following technolo
     npm run dev
     
 # Using Redux DevTools
-    [翻墙下载插件](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+[翻墙下载插件](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 
 # Running Production Server
     npm run deploy

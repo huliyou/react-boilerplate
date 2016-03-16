@@ -4,14 +4,10 @@ const path = require('path');
 const NODE_MODULES = path.resolve(__dirname, 'node_modules');
 const reactPath = path.resolve(NODE_MODULES, 'react/dist/react.min.js');
 const reactLibPath = path.resolve(NODE_MODULES, 'react/lib');
-
-// const amazeuiTouchPath = path.resolve(NODE_MODULES, 'amazeui-touch/dist/amazeui.touch.min.js');
-
 const reactRouterPath = path.resolve(NODE_MODULES, 'react-router/umd/ReactRouter.min.js');
 
 const config = {
   entry: [
-    'webpack/hot/only-dev-server',
     './index.js',
   ],
   module: {
@@ -41,35 +37,32 @@ const config = {
     alias: {
       'react/lib': reactLibPath,
       react: reactPath,
-
-      // 'amazeui-touch': amazeuiTouchPath,
       'react-router': reactRouterPath,
     },
 
   },
   output: {
     path: './',
-    filename: './bundle.js',
-
-    // publicPath: path.resolve('asset')
-  },
-  devServer: {
-    contentBase: './',
-    hot: true,
-    headers: { 'Access-Control-Allow-Origin': '*' },
+    filename: 'bundle.js',
   },
   plugins: [
-
-    // new webpack.optimize.DedupePlugin(),
-    // new webpack.optimize.OccurenceOrderPlugin(),
-    // new webpack.NoErrorsPlugin(),
-    // new webpack.optimize.UglifyJsPlugin({
-    //    compress: {
-    //        warnings: false,
-    //    },
-    //    sourceMap: false
-    // }),
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false,
+      },
+      compress: {
+        warnings: false,
+      },
+      sourceMap: false,
+    }),
   ],
 };
 

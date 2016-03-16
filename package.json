@@ -12,6 +12,7 @@
     "isomorphic-fetch": "^2.2.1",
     "jsdom": "^8.1.0",
     "react": "^0.14.2",
+    "react-dom": "^0.14.7",
     "react-redux": "^4.0.0",
     "react-responsive": "",
     "react-router": "^2.0.1",
@@ -44,7 +45,9 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-middleware": "^1.5.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.10.0"
   },
   "babel": {
     "presets": [
@@ -54,7 +57,9 @@
   },
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.@(js|jsx)'",
-    "dev": "webpack-dev-server --inline --progress --colors --hot ",
-    "deploy": "webpack  --inline --progress --colors"
+    "dev": "node devServer.js",
+    "deploy": "webpack --config webpack.config.prod.js  --inline --progress --colors",
+    "lint": "eslint . --ext .js --ext .jsx",
+    "clean": "rm bundle.js"
   }
 }

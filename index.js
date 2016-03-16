@@ -4,15 +4,11 @@ import thunkMiddleware from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './reducers/reducers';
-import { Router, Route } from 'react-router';
 import { syncHistory } from 'react-router-redux';
 
 import createHistory from 'history/lib/createBrowserHistory';
 const browserHistory = createHistory();
 
-import App from './components/App';
-import PageA from './components/PageA';
-import PageB from './components/PageB';
 
 const rootElement = document.getElementById('app');
 
@@ -23,9 +19,6 @@ const createStoreWithMiddleware = applyMiddleware(
   thunkMiddleware
 )(createStore);
 
-// const createStoreWithMiddleware = applyMiddleware(
-//    thunkMiddleware
-// )(createStore);
 
 const store = createStoreWithMiddleware(
   reducers,
@@ -38,12 +31,7 @@ console.log('store', store.getState());
 
 render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-        <Route path="/" component={App}>
-          <Route path="pageA" component={PageA} />
-          <Route path="pageB" component={PageB} />
-        </Route>
-     </Router>
+    {/* Your root Component */}
   </Provider>,
   rootElement
 );

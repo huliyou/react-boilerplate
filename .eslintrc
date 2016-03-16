@@ -5,27 +5,33 @@
     "flow-vars",
     "react"
   ],
-
   "env": {
     "es6": true
   },
   "ecmaFeatures": {
     "modules": true
   },
-
   "rules": {
+    "quotes": [2, "single"],
+    "strict": [2, "never"],
+    "babel/generator-star-spacing": 1,
+    "babel/new-cap": 1,
+    "babel/object-shorthand": 1,
+    "babel/arrow-parens": 1,
+    "babel/no-await-in-loop": 1,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
     "flow-vars/define-flow-type": 1,
     "flow-vars/use-flow-type": 1,
     "arrow-body-style": 0,
-    "jsx-no-bind": [1, {
-    "ignoreRefs": true,
-    "allowArrowFunctions": true,
-    "allowBind": true
-    }],
-    "new-cap": [1, {
-      "capIsNewExceptions": ["Immutable"]
-    }]
+    "new-cap": [
+      1,
+      {
+        "capIsNewExceptions": [
+          "Immutable"
+        ]
+      }
+    ]
   }
-
-
 }
