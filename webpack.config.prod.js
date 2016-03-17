@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const NODE_MODULES = path.resolve(__dirname, 'node_modules');
 const reactPath = path.resolve(NODE_MODULES, 'react/dist/react.min.js');
 const reactLibPath = path.resolve(NODE_MODULES, 'react/lib');
@@ -8,7 +10,7 @@ const reactRouterPath = path.resolve(NODE_MODULES, 'react-router/umd/ReactRouter
 
 const config = {
   entry: [
-    './index.js',
+    './src/index.js',
   ],
   module: {
     loaders: [
@@ -19,11 +21,17 @@ const config = {
         // loader: 'react-hot!babel'
         loader: 'react-hot!babel',
       },
+      // {
+      //  test: /\.css$/,
+      //
+      //  // loader: 'style!css!autoprefixer?browsers=last 2 versions'
+      //  loader: 'style!css',
+      // },
       {
-        test: /\.css$/,
-
-        // loader: 'style!css!autoprefixer?browsers=last 2 versions'
-        loader: 'style!css',
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'sass'),
       },
       {
         test: /\.(png|jpg)$/,
@@ -42,10 +50,13 @@ const config = {
 
   },
   output: {
-    path: './',
+    path: './dist/',
     filename: 'bundle.js',
   },
   plugins: [
+    new ExtractTextPlugin('dist/stylesheets/[name].css', {
+      allChunks: true,
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),

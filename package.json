@@ -36,12 +36,15 @@
     "estraverse": "^4.1.1",
     "estraverse-fb": "^1.3.1",
     "exports-loader": "",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "imports-loader": "^0.6.5",
     "jsdom": "^8.1.0",
     "json-loader": "^0.5.4",
     "mocha": "^2.4.5",
+    "node-sass": "^3.4.2",
     "react-hot-loader": "^1.3.0",
+    "sass-loader": "^3.2.0",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
@@ -58,7 +61,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.@(js|jsx)'",
     "dev": "node devServer.js",
-    "deploy": "webpack --config webpack.config.prod.js  --inline --progress --colors",
+    "build": "webpack --config webpack.config.prod.js  --inline --progress --colors",
     "lint": "eslint . --ext .js --ext .jsx",
     "clean": "rm bundle.js"
   }

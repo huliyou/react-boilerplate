@@ -26,7 +26,7 @@ This is a starter boilerplate app I've put together using the following technolo
 [翻墙下载插件](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 
 # Running Production Server
-    npm run deploy
+    npm run build 
 
 # Testing
     npm run test

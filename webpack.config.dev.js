@@ -4,36 +4,37 @@ const path = require('path');
 const NODE_MODULES = path.resolve(__dirname, 'node_modules');
 const reactPath = path.resolve(NODE_MODULES, 'react/dist/react.min.js');
 const reactLibPath = path.resolve(NODE_MODULES, 'react/lib');
-
-// const amazeuiTouchPath = path.resolve(NODE_MODULES, 'amazeui-touch/dist/amazeui.touch.min.js');
-
 const reactRouterPath = path.resolve(NODE_MODULES, 'react-router/umd/ReactRouter.min.js');
 
 const config = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
-    'eventsource-polyfill', // necessary for hot reloading with IE
+    // 'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack/hot/only-dev-server',
-    './index.js',
+    './src/index.js',
   ],
   module: {
     loaders: [
       {
         test: /\.jsx?$|\.js?$/,
         exclude: /node_modules/,
-
-        // loader: 'react-hot!babel'
         loader: 'react-hot!babel',
       },
       {
-        test: /\.scss$/,
-        loader: 'style!css!autoprefixer!sass',
+        test: /\.css$/,
+        loaders: [
+          'style?sourceMap',
+          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+        ],
       },
       {
-        test: /\.css$/,
-
-        // loader: 'style!css!autoprefixer?browsers=last 2 versions'
-        loader: 'style!css',
+        test: /\.scss$/,
+        loaders: [
+          'style?sourceMap',
+          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+          'resolve-url',
+          'sass?sourceMap',
+        ],
       },
       {
         test: /\.(png|jpg)$/,
@@ -47,14 +48,12 @@ const config = {
     alias: {
       'react/lib': reactLibPath,
       react: reactPath,
-
-      // 'amazeui-touch': amazeuiTouchPath,
       'react-router': reactRouterPath,
     },
 
   },
   output: {
-    path: './',
+    path: '/dist/',
     filename: './bundle.js',
     publicPath: path.resolve('asset'),
   },
