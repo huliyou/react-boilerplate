@@ -1,5 +1,6 @@
 .idea
 bundle.js
 node_modules
-dist
+dist/bundle.js
+dist/main.css
 *.log
