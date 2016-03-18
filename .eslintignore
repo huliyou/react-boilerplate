@@ -1,4 +1,4 @@
 node_modules/*
 bundle.js
-devServer.js
+serverDev.js
 test/*

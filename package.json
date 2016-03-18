@@ -56,9 +56,9 @@
   },
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.@(js|jsx)'",
-    "dev": "node devServer.js",
+    "dev": "node serverDev.js",
     "build": "webpack --config webpack.config.prod.js  --inline --progress --colors",
     "lint": "eslint . --ext .js --ext .jsx",
-    "clean": "rm bundle.js"
+    "clean": "rm -rf ./dist/stylesheets  ./dist/bundle.js"
   }
 }
