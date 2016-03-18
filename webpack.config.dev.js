@@ -52,7 +52,6 @@ const config = {
   output: {
     path: '/dist/',
     filename: './bundle.js',
-    publicPath: path.resolve('asset'),
   },
   devServer: {
     contentBase: './',
