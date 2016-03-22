@@ -5,9 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './reducers/reducers';
 import { syncHistory } from 'react-router-redux';
-
-import createHistory from 'history/lib/createBrowserHistory';
-const browserHistory = createHistory();
+import { browserHistory } from 'react-router';
 
 
 const rootElement = document.getElementById('app');
