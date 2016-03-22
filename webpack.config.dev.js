@@ -2,9 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 
 const NODE_MODULES = path.resolve(__dirname, 'node_modules');
-const reactPath = path.resolve(NODE_MODULES, 'react/dist/react.min.js');
-const reactLibPath = path.resolve(NODE_MODULES, 'react/lib');
-const reactRouterPath = path.resolve(NODE_MODULES, 'react-router/umd/ReactRouter.min.js');
 
 const config = {
   devtool: 'cheap-module-eval-source-map',
@@ -38,16 +35,9 @@ const config = {
         loader: 'url-loader?limit=100000000',
       },
     ],
-    noParse: [reactPath],
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
-    alias: {
-      'react/lib': reactLibPath,
-      react: reactPath,
-      'react-router': reactRouterPath,
-    },
-
   },
   output: {
     path: '/dist/',
