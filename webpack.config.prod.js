@@ -21,17 +21,12 @@ const config = {
         // loader: 'react-hot!babel'
         loader: 'react-hot!babel',
       },
-      // {
-      //  test: /\.css$/,
-      //
-      //  // loader: 'style!css!autoprefixer?browsers=last 2 versions'
-      //  loader: 'style!css',
-      // },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style',
-          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'sass'),
+          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' +
+          '!autoprefixer-loader!sass-loader'
+        ),
       },
       {
         test: /\.(png|jpg)$/,

@@ -34,3 +34,6 @@ This is a starter boilerplate app I've put together using the following technolo
 # Info
     node version: v5.0.0
     npm version: 3.8.1
+    
+# 优化
+    autoprefixer
