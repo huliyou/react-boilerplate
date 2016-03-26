@@ -37,3 +37,5 @@ This is a starter boilerplate app I've put together using the following technolo
     
 # 优化
     autoprefixer
+    
+    purifycss  // webpack loader failed
